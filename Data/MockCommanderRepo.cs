@@ -6,6 +6,11 @@ namespace Commander.Data
 {
     public class MockCommanderRepo : ICommanderRepo
     {
+        public void CreateCommand(Command cmd)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             return new List<Command>
@@ -16,9 +21,19 @@ namespace Commander.Data
             };
         }
 
+        public IEnumerable<Command> GetByHowToLike(string name)
+        {
+            throw new NotImplementedException();
+        }
+
         public Command GetCommandById(int Id)
         {
             return new Command{Id=0, HowTo="Boil an egg", Line="Boil Water", Platform="Kettle & Pan"};
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

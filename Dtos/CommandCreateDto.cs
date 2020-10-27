@@ -1,20 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Commander.Models
+namespace Commander.Dtos
 {
-    public class Command
+    public class CommandCreateDto
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [MaxLength(250)]
         public string HowTo { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="O campo line é obrigatório")]
         public string Line { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="O campo Platform é obrigatório")]
         public string Platform { get; set; }
     }
 }
